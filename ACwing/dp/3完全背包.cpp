@@ -1,9 +1,9 @@
 /**
  * dp 完全背包
- * dp[i][j] = max(dp[i - 1][j], dp[i][j - v[i]] + w[i], dp[i][j - 2*v[i]] + 2*w[i], ..., dp[i][j - k*v[i]] + k*w[i])
- * dp[i][j - v[i]] = max(       dp[i-1][j-v[i]]       , dp[i][j - 2*v[i]] + w[i],  ...,       )
+ * dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - v[i]] + w[i], dp[i - 1][j - 2*v[i]] + 2*w[i], ..., dp[i][j - k*v[i]] + k*w[i])
+ * dp[i][j - v[i]] = max(       dp[i - 1][j-v[i]]       ,   dp[i - 1][j - 2*v[i]] + w[i],  ...,       )
  * 
- * dp[i][j] = max(dp[i - 1][j], dp[i][j - v[i] + w[i])
+ * dp[i][j] = max(dp[i - 1][j], dp[i][j - v[i]] + w[i])
  **/ 
  
 #include <iostream>
